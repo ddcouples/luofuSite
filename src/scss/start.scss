@@ -1,0 +1,87 @@
+html,body{
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	line-height:0;
+	font-size:62.5%;
+}
+.bg-black{	
+	background:#000;
+}
+.text-center{
+	text-align:center;
+	margin-top: 10px;
+}
+.full-screen{
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	text-align:right;
+	overflow-x:hidden;
+	.light{
+	    display: inline-block;
+	    margin-right: 5rem;
+	    position:absolute;
+	    right:5rem;
+	    top:0;	
+	    transition:transform .8s ease-in-out;
+	    .light-line{
+	    	width: 2px;
+	    	height:400px;
+	    	box-shadow:2px 0 13px #999 inset,-2px 0 13px #999 inset;
+	    }
+	    .light-open{
+	    	width:20px;
+	    	height:20px;
+	    	border-radius: 50%;
+	    	margin-left: -9px;
+	    	transition:background .6s ease-in-out,box-shadow .6s ease-in-out;
+	    	position:relative;
+	    	cursor:pointer;
+	    	background:#999;
+	    	-webkit-animation-name: skyset;
+		    -webkit-animation-duration: 3000ms;
+		    -webkit-animation-iteration-count: infinite; /*无限循环*/
+		    -webkit-animation-timing-function: linear;
+	    }
+	    @-webkit-keyframes skyset {
+		    0% { box-shadow:1px 0 3px #fff inset,-1px 0 3px #fff inset,0px 1px 1px #fff,0px -1px 1px #fff,1px 0px 3px #fff,-1px 0px 3px #fff;}
+		    25% {box-shadow:1px 0 5px #fff inset,-1px 0 5px #fff inset,0px 3px 3px #fff,0px -3px 3px #fff,3px 0px 5px #fff,-3px 0px 5px #fff;}
+		    50%{ box-shadow:1px 0 8px #fff inset,-1px 0 8px #fff inset,0px 5px 5px #fff,0px -5px 5px #fff,5px 0px 8px #fff,-5px 0px 8px #fff;}
+		    75% {box-shadow:1px 0 5px #333 inset,-1px 0 5px #333 inset,0px 3px 3px #fff,0px -3px 3px #fff,3px 0px 5px #fff,-3px 0px 5px #fff;}
+		    100% {box-shadow:1px 0 3px #333 inset,-1px 0 3px #333 inset,0px 1px 1px #fff,0px -1px 1px #fff,1px 0px 3px #fff,-1px 0px 3px #fff;}
+		}
+	    .light-open:hover {
+	    	background:#fff;
+	    	box-shadow:2px 0 13px #999 inset,-2px 0 13px #999 inset,1px 0 13px #fff,-1px 0 13px #fff;
+	    }
+	    .light-open:hover+.light-open:after{
+	    	opacity:0;
+	    }
+	    .light-before-after:before{
+            content:'';
+	    	position:absolute;
+			top:0;
+	    	right:200%;
+	    	opacity: 0.5;
+	    	transform: translateX(100%);
+	    	border-left:15px solid #999;
+	    	border-right:15px solid transparent;
+	    	border-top:10px solid transparent;
+	    	border-bottom:10px solid transparent;
+	    }
+	    .light-before-after:after{
+	    	content:'按住向下';
+	    	position:absolute;
+	    	top:0;
+	    	right:200%;
+	    	width:50px;
+	    	padding:10px 12px;
+	    	border-right:1px solid #999;
+	    	box-shadow:2px 0 13px #999 inset,-2px 0 13px #999 inset,1px 0 13px #fff,-1px 0 13px #fff;
+	    }	
+	}
+}
